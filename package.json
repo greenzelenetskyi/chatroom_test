@@ -1,0 +1,25 @@
+{
+  "name": "chatroom_test",
+  "version": "1.0.0",
+  "description": "public RESTful API chatroom app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenzelenetskyi"
+  },
+  "author": "Andrii Zelenetskyi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "dotenv": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  }
+}
