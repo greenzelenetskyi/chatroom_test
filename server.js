@@ -24,7 +24,7 @@ app.use(MESSAGES_ROUTE, router);
 // server starts only if db is available
 (async function startService() {
   try {
-    const dbClient = await MongoClient.connect(process.env.MONGO_CONNECTION_URL, { useNewUrlParser: true });
+    const dbClient = await MongoClient.connect(process.env.MONGODB_URI || process.env.DEV_MONGODB_URI, { useNewUrlParser: true });
     app.locals.db = dbClient.db(process.env.DB_NAME);
     app.listen(process.env.PORT || 8080, () => logMessage(`listens to port ${process.env.PORT}`));
 

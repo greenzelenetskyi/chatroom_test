@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "public RESTful API chatroom app",
   "main": "server.js",
+  "engines": {
+    "node": "10.8.0"
+  },
   "scripts": {
     "test": "jest",
     "start": "node server.js"
