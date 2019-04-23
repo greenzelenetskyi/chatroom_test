@@ -13,7 +13,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // enable cors
-app.use(cors());
+app.use(cors({credentials: true, origin: true }));
 
 app.use(compression());
 app.use(helmet());
