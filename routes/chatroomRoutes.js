@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { findMessage, returnMessageList, saveNewMessage } = require('../controllers/chatroom');
+const controller = require('../controllers/chatroom');
+const { LIST_OPTION, FIND_SINGLE_OPTION } = require('../config/chatroomConfig');
 
-const BASE_ROUTE = '/';
-const LIST_ROUTE = `${BASE_ROUTE}list/:pageId`;
-const SINGLE_ROUTE = `${BASE_ROUTE}single/:messageId`;
+// returns message list
+router.get(`/list/:${LIST_OPTION}`, controller.validateListReqParam, controller.returnMessageList);
 
-router.get(LIST_ROUTE, returnMessageList);
+// returns single message by id
+router.get(`/single/:${FIND_SINGLE_OPTION}`, controller.findMessage);
 
-router.get(SINGLE_ROUTE, findMessage);
-
-router.post(BASE_ROUTE, saveNewMessage);
+// saves single message to db
+router.post('/', controller.validateSaveMessageRequest, controller.saveNewMessage);
 
 exports.router = router;
