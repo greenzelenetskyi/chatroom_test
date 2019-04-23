@@ -86,7 +86,7 @@ async function returnMessageList(req, res, next) {
 // reqest body and required props are validated by middleware
 async function saveNewMessage(req, res, next) {
   try {
-    const result = recordNewMessage(req.app.locals.db.collection(DB_COLLECTION), req.body.email, req.body.message);
+    const result = await recordNewMessage(req.app.locals.db.collection(DB_COLLECTION), req.body.email, req.body.message);
     if (result.insertedCount > 1) {
       return res.status(INTERNAL_ERR_CODE).json(createErrorObject(INTERNAL_ERR, SERVER_FAIL_MESSAGE));
     }
