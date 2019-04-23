@@ -13,7 +13,11 @@ const app = express();
 app.use(bodyParser.json());
 
 // enable cors
-app.use(cors({credentials: true, origin: true }));
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.use(compression());
 app.use(helmet());
