@@ -12,9 +12,9 @@ async function collectMessageListPortion(dbCollection, pageNum, size) {
 }
 
 async function recordNewMessage(dbCollection, email, message) {
-  const creationDate = new Date().toISOString();
+  const creationTime = new Date().toISOString();
   const result = await dbCollection.insertOne({
-    email, message, creationDate, updateTime: creationDate,
+    email, message, creationTime, updateTime: creationTime,
   });
   return result;
 }

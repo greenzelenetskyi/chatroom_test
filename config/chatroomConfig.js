@@ -18,7 +18,7 @@ const LIST_OPTION = 'pageId';
 // db id string
 const FIND_SINGLE_OPTION = 'messageId';
 
-const DB_COLLECTION = 'a';
+const DB_COLLECTION = 'messages';
 
 // base route for all operations with messages
 const MESSAGES_ROUTE = '/api/messages';
