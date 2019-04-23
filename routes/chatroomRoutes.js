@@ -6,7 +6,7 @@ const { LIST_OPTION, FIND_SINGLE_OPTION } = require('../config/chatroomConfig');
 router.get(`/list/:${LIST_OPTION}`, controller.validateListReqParam, controller.returnMessageList);
 
 // returns single message by id
-router.get(`/single/:${FIND_SINGLE_OPTION}`, controller.findMessage);
+router.get(`/single/:${FIND_SINGLE_OPTION}`, controller.validateMessageIdParam, controller.findMessage);
 
 // saves single message to db
 router.post('/', controller.validateSaveMessageRequest, controller.saveNewMessage);
